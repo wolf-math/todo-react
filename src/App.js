@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { render } from '@testing-library/react';
+import ListenItem from './ListItem';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      chores: [
+        {
+          id: 1,
+          name: "take out the trash",
+          description: "trash removal from both bins",
+          completed: true
+        },
+        {
+          id: 2,
+          name: "eat spaghetti",
+          description: "eat pascetti",
+          completed: false
+        }
+      ]
+    }
+  }
+  render() {
+    const { chores } = this.state;
+    return (
+      <div className="App">
+        <h1>Chores</h1>
+        <ul>
+          {chores.map(chore => (
+
+          ))}
+        </ul>
+      </div>
+    )
+  }
 }
 
 export default App;
