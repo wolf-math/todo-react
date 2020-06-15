@@ -20,10 +20,10 @@ const styles = {
 export default class ListItem extends PureComponent {
     render() {
         return (
-            <li style={styles.li}>
-                <div style={styles.leftWall(this.props.completed ? "green" : "red")}>
+            <li style={styles.li} onClick={() => this.props.handleOnClick(this.props.id)}>
+                <div style={styles.leftWall(this.props.completed ? "green" : "red")} />
                     <ListBody name={this.props.name} description={this.props.description} />
-                </div>
+               
             </li>
         )
     }

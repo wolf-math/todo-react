@@ -21,3 +21,5 @@ const ListBody = ({name, description}) => (
         <span style={styles.description}>{description}</span>
     </div>
 )
+
+export default ListBody
